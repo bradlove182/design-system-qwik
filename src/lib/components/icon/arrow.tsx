@@ -23,13 +23,13 @@ const IconArrow = component$(
                 <g
                     fill="none"
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
                 >
                     <path
-                        strokeDasharray="20"
-                        strokeDashoffset="20"
+                        stroke-dasharray="20"
+                        stroke-dashoffset="20"
                         d="M21 12H3.5"
                     >
                         <animate
@@ -40,8 +40,8 @@ const IconArrow = component$(
                         ></animate>
                     </path>
                     <path
-                        strokeDasharray="12"
-                        strokeDashoffset="12"
+                        stroke-dasharray="12"
+                        stroke-dashoffset="12"
                         d="M3 12L10 19M3 12L10 5"
                     >
                         <animate

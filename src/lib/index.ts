@@ -12,3 +12,8 @@ export { Checkbox } from "./components/checkbox";
 export { Code } from "./components/code";
 export { Dropdown } from "./components/dropdown";
 export { Icon } from "./components/icon";
+export { InlineCode } from "./components/inline-code";
+export { Input } from "./components/input";
+export { List } from "./components/list";
+export { Logo } from "./components/logo";
+export { Modal } from "./components/modal";

@@ -1,0 +1,15 @@
+.code {
+    background-color: hsla(var(--gray-80), 60%);
+    border-color: var(--border-color);
+    border-width: 1px;
+    box-shadow: var(--elevation-1);
+    padding: 2px var(--spacing-2);
+    border-radius: var(--border-radius-3);
+    font-family: var(--font-mono);
+    color: var(--brand);
+    display: inline;
+    width: max-content;
+    font-size: var(--font-size-2);
+    font-weight: 400;
+    height: min-content;
+}

@@ -1,0 +1,73 @@
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(var(--gray-100), 50%);
+    z-index: 50;
+    top: 0;
+    left: 0;
+    opacity: var(--modal-opacity, 0);
+    visibility: var(--modal-visibility, hidden);
+    transition: opacity var(--box-duration, 0.3s) ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    appearance: none;
+    background: transparent;
+    z-index: 51;
+    cursor: pointer;
+}
+
+.modal-box {
+    background-color: var(--background);
+    padding: var(--spacing-5) var(--spacing-4);
+    max-width: 600px;
+    width: 100%;
+    box-shadow: var(--elevation-3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-4);
+    z-index: 52;
+    transition: transform var(--box-duration, 0.3s) ease;
+    transform: translate(0, var(--box-offset, 10%));
+}
+
+.modal-box:before,
+.modal-box:after{
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        hsla(var(--gray-75)),
+        hsla(var(--gray-55)),
+        hsla(var(--gray-75)),
+        transparent
+    );
+    width: 200px;
+    height: 1px;
+}
+
+.modal-box:before{
+    top: 0;
+    left: 0;
+}
+
+.modal-box:after{
+    bottom: 0;
+    right: 0;
+}
+
+.modal:has(input[type="checkbox"]:checked) {
+    --modal-opacity: 1;
+    --modal-visibility: visible;
+    --box-duration: 0.3s;
+    --box-offset: 0;
+}

@@ -1,0 +1,119 @@
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    background-color: var(--form-input-background);
+    border: 1px solid var(--form-input-border);
+    border-radius: var(--border-radius-3);
+    padding: 0 var(--spacing-3);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    line-height: 2.3334rem;
+}
+
+.input svg {
+    color: var(--form-input-border);
+    transition: color 0.3s ease;
+}
+
+.input input {
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+}
+
+.input:has(input:disabled) {
+    background-color: var(--form-input-disabled);
+    border-color: var(--form-input-disabled);
+    color: var(--form-input-text-disabled);
+    cursor: not-allowed;
+}
+
+.input:has(input:disabled) svg {
+    color: var(--form-input-text-disabled);
+}
+
+.input input:disabled,
+.input button:disabled {
+    cursor: not-allowed;
+}
+
+.input button {
+    outline: none;
+}
+
+.input button:focus svg,
+.input button:active svg {
+    color: var(--brand);
+}
+
+.input input:disabled::placeholder{
+    color: var(--form-input-text-disabled);
+}
+
+.input input::placeholder {
+    color: var(--text-subdued);
+    opacity: 0.5;
+}
+
+.input input:-webkit-autofill {
+    -webkit-text-fill-color: var(--text);
+    -webkit-box-shadow: 0 0 0px 40rem var(--form-input-background) inset;
+}
+
+.input:has(input:not(:disabled)):hover,
+.input:has(input:not(:disabled)):focus,
+.input:has(input:not(:disabled)):active,
+.input:has(input:not(:disabled):hover),
+.input:has(input:not(:disabled):focus),
+.input:has(input:not(:disabled):active) {
+    box-shadow: var(--form-input-glow);
+    border-color: var(--brand);
+}
+
+.input:has(input:not(:disabled)):hover svg,
+.input:has(input:not(:disabled)):focus svg,
+.input:has(input:not(:disabled)):active svg,
+.input:has(input:not(:disabled):hover) svg,
+.input:has(input:not(:disabled):focus) svg,
+.input:has(input:not(:disabled):active) svg {
+    color: var(--brand);
+}
+
+.input:has(input:not(:placeholder-shown):not(:disabled)) svg {
+    color: var(--icon-color, var(--brand));
+}
+
+.input:has(input[type="email"]:not(:placeholder-shown):valid) {
+    --at-sign: 120;
+    --at-sign-delay: 0s;
+    --at-sign-circle: 30;
+    --tick: 0;
+    --tick-delay: 0.5s;
+    --icon-color: var(--text-success);
+}
+
+.email-icon {
+    position: relative;
+    height: var(--icon-size-3);
+    width: var(--icon-size-3);
+}
+
+.email-icon svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.show-password {
+    --eye: 0;
+    --eye-delay: 0s;
+    --strike: 32;
+    --strike-delay: 0s;
+}

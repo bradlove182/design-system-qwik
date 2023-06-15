@@ -1,0 +1,33 @@
+.list {
+    margin: 0px 0px 1.45rem;
+    padding: 0px;
+    color: inherit;
+    list-style-position: outside;
+    list-style-image: none;
+}
+
+.list li {
+    list-style: none;
+    display: flex;
+    margin-bottom: calc(1.45rem / 2);
+    line-height: 1.9;
+    gap: var(--spacing-3);
+    align-items: center;
+}
+
+.list li svg {
+    color: var(--brand);
+}
+
+.ordered li {
+    counter-increment: li 1;
+}
+
+.ordered li svg {
+    display: none;
+}
+
+.ordered li:before {
+    content: counters(li, ".") ". ";
+    color: var(--brand);
+}

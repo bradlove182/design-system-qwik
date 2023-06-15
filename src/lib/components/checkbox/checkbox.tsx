@@ -1,5 +1,4 @@
 import {
-    Slot,
     component$,
     type QwikChangeEvent,
     type PropFunction,
