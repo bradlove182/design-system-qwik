@@ -1,0 +1,168 @@
+.button {
+    height: 44px;
+    width: max-content;
+    padding: 0 var(--spacing-3);
+    border-radius: var(--border-radius-3);
+    display: flex;
+    gap: var(--spacing-2);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: box-shadow 0.3s ease;
+    outline: none;
+    color: var(--text-amplified);
+}
+
+.button:not(:disabled):not(.icon):hover,
+.button:not(:disabled):not(.icon):focus,
+.button:not(:disabled):not(.icon):active {
+    box-shadow: var(--box-shadow-glow);
+}
+
+.button:disabled {
+    background-color: var(--form-input-disabled);
+    color: var(--text-subdued);
+    cursor: not-allowed;
+}
+
+.button:disabled svg {
+    color: var(--text-subdued);
+}
+
+.button svg {
+    color: var(--text-brand);
+}
+
+.brand {
+    background-color: var(--brand-subdued);
+    color: var(--brand);
+    border-width: var(--border-1);
+    border-color: var(--border-color);
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+.outline {
+    background-color: transparent;
+    border-width: var(--border-1);
+    border-color: var(--border-color);
+}
+
+.gradient {
+    background-color: var(--background);
+    color: var(--text-amplified);
+}
+
+.gradient:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: var(--gradient-0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: 2.7s ease-in-out 0s infinite normal both running pulsing-gradient;
+}
+
+.gradient:before {
+    content: "";
+    height: calc(100% + 2px);
+    width: calc(100% + 2px);
+    background-image: var(--gradient-0);
+    pointer-events: none;
+    border-radius: var(--border-radius-3);
+    z-index: -1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+}
+
+.icon {
+    height: 44px;
+    width: 44px;
+    padding: 0;
+    background-color: transparent;
+    border-width: 0;
+}
+
+.icon svg {
+    height: var(--icon-size-3);
+    width: var(--icon-size-3);
+    color: var(--text);
+    z-index: 1;
+}
+
+.icon:hover:not(:disabled) svg,
+.icon:focus:not(:disabled) svg,
+.icon:active:not(:disabled) svg {
+    color: var(--brand);
+}
+
+.icon:hover:not(:disabled):after,
+.icon:focus:not(:disabled):after,
+.icon:active:not(:disabled):after {
+    --border-hover-color: var(--brand);
+    --border-thickness: 2px;
+    --color: var(--brand);
+    --corner: calc(var(--border-radius-3) + 2px);
+    --button-background-scale: 0.92;
+    box-shadow: var(--box-shadow-glow);
+}
+
+.icon.brand:not(:disabled):after {
+    background-color: var(--foreground);
+}
+
+.size-small {
+    height: 32px;
+    width: 32px;
+}
+
+.icon.size-small svg {
+    height: var(--icon-size-2);
+    width: var(--icon-size-2);
+}
+
+.icon:after {
+    z-index: 0;
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--corner, var(--border-radius-3));
+    transition: box-shadow 0.3s ease 0s, border-color 0.2s ease 0s,
+        background 0.3s ease 0s,
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0s;
+    transform: scale(var(--button-background-scale, 1)) translateZ(0);
+    border: var(--border-thickness, 1px) solid
+        var(--border-hover-color, transparent);
+    box-shadow: var(--shadow, none);
+    z-index: 0;
+}
+
+@keyframes pulsing-gradient {
+    0% {
+        transform: rotate(0deg);
+        filter: blur(8px);
+        border-radius: 5px;
+    }
+    33% {
+        transform: rotate(-0.3deg) scale(1.03);
+        filter: blur(10px);
+        border-radius: 3px;
+    }
+    66% {
+        transform: rotate(0.3deg) scale(0.99);
+        filter: blur(14px);
+        border-radius: 7px;
+    }
+    100% {
+        transform: rotate(0deg);
+        filter: blur(8px);
+        border-radius: 5px;
+    }
+}

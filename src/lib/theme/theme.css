@@ -1,0 +1,128 @@
+:root {
+    --brand: hsla(var(--indigo-25));
+    --brand-subdued: hsla(var(--indigo-25), 10%);
+    --background: hsla(var(--gray-95));
+    --background-100: hsla(var(--gray-90));
+    --background-200: hsla(var(--gray-88));
+    --background-300: hsla(var(--gray-85));
+    --foreground: hsla(var(--gray-88));
+    --tooltip: hsla(var(--gray-80));
+    --background-brand: hsla(var(--indigo-30), 15%);
+    --background-info: hsla(var(--blue-30), 15%);
+    --background-success: hsla(var(--green-30), 15%);
+    --background-error: hsla(var(--red-30), 15%);
+    --background-warning: hsla(var(--yellow-30), 15%);
+    --background-default: hsla(var(--gray-15), 15%);
+
+    --text: hsla(var(--gray-15));
+    --text-amplified: hsla(var(--gray-0));
+    --text-subdued: hsla(var(--gray-30));
+    --text-white: #ffffff;
+    --text-black: #000000;
+    --text-error: hsla(var(--red-30));
+    --text-success: hsla(var(--green-30));
+    --text-warning: hsla(var(--yellow-30));
+    --text-info: hsla(var(--blue-30));
+
+    --font-size-1: 12px;
+    --font-size-2: 0.875rem;
+    --font-size-3: 1rem;
+    --font-size-4: 1.125rem;
+    --font-size-5: 1.25rem;
+    --font-size-6: 1.5rem;
+    --font-size-7: 2rem;
+
+    --font-weight-1: 300;
+    --font-weight-2: 400;
+    --font-weight-3: 500;
+    --font-weight-4: 600;
+
+    --font-fallback: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --font-display: "Inter", var(--font-fallback);
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+
+    --icon-size-1: 12px;
+    --icon-size-2: 16px;
+    --icon-size-3: 20px;
+    --icon-size-4: 24px;
+    --icon-size-5: 28px;
+    --icon-size-6: 32px;
+    --icon-size-7: 36px;
+    --icon-size-8: 40px;
+
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 16px;
+    --spacing-4: 24px;
+    --spacing-5: 32px;
+    --spacing-6: 40px;
+    --spacing-7: 48px;
+    --spacing-8: 56px;
+    --spacing-9: 64px;
+
+    --border-color: hsla(var(--gray-80));
+
+    --border-radius-1: 2px;
+    --border-radius-2: 4px;
+    --border-radius-3: 8px;
+    --border-radius-4: 12px;
+    --border-radius-5: 16px;
+
+    --border-0: 0px;
+    --border-1: 1px;
+    --border-2: 2px;
+    --border-3: 3px;
+    --border-4: 4px;
+
+    --form-input-background: hsla(var(--gray-88));
+    --form-input-disabled: hsla(var(--gray-80));
+    --form-input-text-disabled: hsla(var(--gray-30));
+    --form-input-glow: 0 2px 10px -2px hsla(var(--indigo-35), 1);
+    --form-input-border: hsla(var(--gray-70));
+
+    --box-shadow-glow: 0 2px 30px -4px hsla(var(--indigo-35), 1);
+    --shadow-color: var(--local-shadow-color, var(--base-gray-hue) 5% 0.5%);
+
+    --elevation-1: 0.5px 1px 1px hsl(var(--shadow-color) / 0.7);
+    --elevation-2: 1px 2px 2px hsl(var(--shadow-color) / 0.333),
+        2px 4px 4px hsl(var(--shadow-color) / 0.333),
+        3px 6px 6px hsl(var(--shadow-color) / 0.333);
+    --elevation-3: 1px 2px 2px hsl(var(--shadow-color) / 0.2),
+        2px 4px 4px hsl(var(--shadow-color) / 0.2),
+        4px 8px 8px hsl(var(--shadow-color) / 0.2),
+        8px 16px 16px hsl(var(--shadow-color) / 0.2),
+        16px 32px 32px hsl(var(--shadow-color) / 0.2);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background: hsla(var(--gray-0));
+        --foreground: hsla(var(--gray-2));
+        --text: hsla(var(--gray-65));
+        --text-amplified: hsla(var(--gray-80));
+        --text-subdued: hsla(var(--gray-55));
+        --border-color: hsla(var(--gray-5));
+        --shadow-color: var(--local-shadow-color, var(--base-gray-hue) 5% 40%);
+    }
+}
+
+html {
+    background-color: var(--background);
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    font-size: var(--font-size-3);
+    line-height: 1.5;
+}
+
+::selection {
+    color: var(--brand);
+    background-color: var(--background-brand);
+}

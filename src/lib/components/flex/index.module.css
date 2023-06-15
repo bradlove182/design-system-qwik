@@ -1,0 +1,13 @@
+.flex {
+    display: flex;
+    width: auto;
+    gap: var(--grid-gap, 0);
+    align-items: var(--align-items, stretch);
+    justify-content: var(--justify-content);
+    flex-wrap: var(--flex-wrap, nowrap);
+    flex-direction: var(--flex-direction, row);
+}
+
+.full-width {
+    width: 100%;
+}

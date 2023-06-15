@@ -1,0 +1,13 @@
+.grid {
+    display: grid;
+    height: inherit;
+    width: 100%;
+    gap: var(--grid-gap, 0);
+    align-items: var(--align-items, stretch);
+    justify-content: var(--justify-content);
+    grid-auto-flow: var(--grid-auto-flow, row);
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(calc(100% / var(--grid-columns, 1) - var(--grid-gap)), 1fr)
+    );
+}

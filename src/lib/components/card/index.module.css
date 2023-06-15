@@ -1,0 +1,71 @@
+.card {
+    background-color: var(--background-100);
+    border-radius: var(--border-radius-4);
+    border-color: var(--border-color);
+    border-width: 1px;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "body";
+    grid-template-rows: min-content 1fr;
+    position: relative;
+    z-index: 0;
+}
+
+.card:before,
+.card:after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(
+        90deg,
+        transparent,
+        hsla(var(--gray-75)),
+        hsla(var(--gray-55)),
+        hsla(var(--gray-75)),
+        transparent
+    );
+    width: 200px;
+    height: 1px;
+}
+
+.card:before {
+    top: 0;
+    left: 0;
+}
+
+.card:after {
+    bottom: 0;
+    right: 0;
+}
+
+.header {
+    color: var(--text-amplified);
+    grid-area: header;
+    padding: 0 var(--spacing-4);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: var(--border-radius-4);
+    border-top-right-radius: var(--border-radius-4);
+    font-weight: 600;
+    font-size: var(--font-size-2);
+    min-height: var(--spacing-7);
+}
+
+.body {
+    padding: var(--spacing-5) var(--spacing-4);
+    grid-area: body;
+}
+
+.elevation-1 {
+    box-shadow: var(--elevation-1);
+}
+
+.elevation-2 {
+    box-shadow: var(--elevation-2);
+}
+
+.elevation-3 {
+    box-shadow: var(--elevation-3);
+}
