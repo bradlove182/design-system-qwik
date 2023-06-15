@@ -1,4 +1,4 @@
-import { Component, Slot, component$ } from "@builder.io/qwik";
+import { type Component, Slot, component$ } from "@builder.io/qwik";
 
 import style from "./index.module.css";
 

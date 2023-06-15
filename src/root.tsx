@@ -1,6 +1,4 @@
-import { Button, Card, Container, Flex, Grid } from "@lib";
-
-import "./lib/index.css";
+import { Button, Card, Checkbox, Code, Container, Flex, Grid } from "@lib";
 
 export default () => {
     return (
@@ -11,7 +9,7 @@ export default () => {
             </head>
             <body>
                 <Container>
-                    <Grid>
+                    <Grid gap={6}>
                         <Flex>
                             <Button variant={"gradient"}>{"Button"}</Button>
                             <Button>{"Button"}</Button>
@@ -19,6 +17,8 @@ export default () => {
                         <Card>
                             <Card.Body>{"Body"}</Card.Body>
                         </Card>
+                        <Checkbox id="checkbox" label="Checkbox" />
+                        <Code>{"Code"}</Code>
                     </Grid>
                 </Container>
             </body>

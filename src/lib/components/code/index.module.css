@@ -1,0 +1,14 @@
+.code {
+    background-color: var(--foreground);
+    border-color: var(--border-color);
+    border-width: 1px;
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius-3);
+    font-family: var(--font-mono);
+    color: var(--text-subdued);
+    display: block;
+    width: 100%;
+    font-size: var(--font-size-3);
+    font-weight: 400;
+    height: min-content;
+}

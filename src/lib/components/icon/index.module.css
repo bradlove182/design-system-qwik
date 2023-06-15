@@ -1,0 +1,74 @@
+.icon {
+    color: var(--icon-color, currentColor);
+    height: var(--icon-size, var(--icon-size-3));
+    width: var(--icon-size, var(--icon-size-3));
+}
+
+.default {
+    color: var(--text);
+}
+
+.subdued {
+    color: var(--text-subdued);
+}
+
+.amplified {
+    color: var(--text-amplified);
+}
+
+.info {
+    color: var(--text-info);
+}
+
+.error {
+    color: var(--text-error);
+}
+
+.success {
+    color: var(--text-success);
+}
+
+.warning {
+    color: var(--text-warning);
+}
+
+.size-1 {
+    height: var(--icon-size-1);
+    width: var(--icon-size-1);
+}
+
+.size-2 {
+    height: var(--icon-size-2);
+    width: var(--icon-size-2);
+}
+
+.size-3 {
+    height: var(--icon-size-3);
+    width: var(--icon-size-3);
+}
+
+.size-4 {
+    height: var(--icon-size-4);
+    width: var(--icon-size-4);
+}
+
+.size-5 {
+    height: var(--icon-size-5);
+    width: var(--icon-size-5);
+}
+
+.direction-right {
+    transform: rotate(0deg);
+}
+
+.direction-left {
+    transform: rotate(180deg);
+}
+
+.direction-down {
+    transform: rotate(90deg);
+}
+
+.direction-up {
+    transform: rotate(-90deg);
+}

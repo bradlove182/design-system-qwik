@@ -1,0 +1,11 @@
+.label {
+    color: var(--text-subdued);
+    user-select: none;
+    cursor: pointer;
+    letter-spacing: 0;
+    vertical-align: top;
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-3);
+    display: inline-flex;
+    width: max-content;
+}

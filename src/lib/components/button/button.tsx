@@ -1,4 +1,4 @@
-import { QRL, component$, Slot, $ } from "@builder.io/qwik";
+import { component$, Slot, type PropFunction } from "@builder.io/qwik";
 
 import style from "./index.module.css";
 
@@ -6,7 +6,7 @@ export interface ButtonBaseProps {
     size?: "default" | "small";
     icon?: boolean;
     disabled?: boolean;
-    onClick?: QRL<() => void>;
+    onClick?: PropFunction<() => void>;
     as?: "button" | "span";
 }
 
@@ -30,7 +30,7 @@ const Button = component$(
         size = "default",
         icon,
         disabled = false,
-        onClick = $(() => {}),
+        onClick,
         as = "button",
     }: ButtonProps) => {
         const Component = as;
