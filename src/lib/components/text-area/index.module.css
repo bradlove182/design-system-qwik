@@ -1,0 +1,45 @@
+.text-area {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.text-area textarea {
+    background-color: var(--form-input-background);
+    border: 1px solid var(--form-input-border);
+    border-radius: var(--border-radius-3);
+    padding: var(--spacing-2) var(--spacing-3);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    line-height: 1.445rem;
+    outline: none;
+    appearance: none;
+    resize: none;
+}
+
+.text-area textarea:disabled {
+    background-color: var(--form-input-disabled);
+    border-color: var(--form-input-disabled);
+    color: var(--form-input-text-disabled);
+    cursor: not-allowed;
+}
+
+.text-area textarea:disabled::placeholder{
+    color: var(--form-input-text-disabled);
+}
+
+.text-area textarea::placeholder {
+    color: var(--text-subdued);
+    opacity: 0.5;
+}
+
+.text-area textarea:not(:disabled):hover,
+.text-area textarea:not(:disabled):focus,
+.text-area textarea:not(:disabled):active {
+    box-shadow: var(--form-input-glow);
+    border-color: var(--brand);
+}
+
+.text-area textarea:-webkit-autofill {
+    -webkit-text-fill-color: var(--text);
+    -webkit-box-shadow: 0 0 0px 40rem var(--form-input-background) inset;
+}

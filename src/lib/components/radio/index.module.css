@@ -1,0 +1,72 @@
+.radio-group {
+    display: flex;
+    flex-direction: var(--radio-direction, column);
+    gap: var(--spacing-2);
+}
+
+.radio-item {
+    display: flex;
+    gap: var(--spacing-2);
+    align-items: center;
+}
+
+.radio-item input[type="radio"] {
+    height: var(--spacing-4);
+    width: var(--spacing-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--radio-background, var(--form-input-background));
+    border: 1px solid var(--radio-border, var(--form-input-border));
+    border-radius: var(--spacing-4);
+    appearance: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s,
+        box-shadow 0.2s ease 0s;
+    position: relative;
+    outline: none;
+}
+
+.radio-item input[type="radio"]:after {
+    content: "";
+    height: 50%;
+    width: 50%;
+    transform: scale(var(--dot-scale, 2));
+    transition: transform var(--duration-transform, 0.2s)
+        var(--duration-transform-ease, ease);
+    background-color: var(--form-input-background);
+    border-radius: var(--spacing-4);
+}
+
+.radio-item input[type="radio"]:checked:after {
+    --dot-scale: 1;
+    --duration-transform: 0.4s;
+    --duration-transform-ease: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.radio-item input[type="radio"]:not(:disabled):checked {
+    --radio-background: var(--brand);
+    --radio-border: var(--brand);
+}
+
+.radio-item input[type="radio"]:disabled {
+    --radio-background: var(--form-input-border);
+    --radio-border: var(--form-input-disabled);
+    cursor: not-allowed;
+}
+
+.radio-item input[type="radio"]:disabled:after {
+    background-color: var(--form-input-disabled);
+    border-color: var(--form-input-disabled);
+}
+
+.radio-item input[type="radio"]:disabled + label {
+    cursor: not-allowed;
+}
+
+.radio-item input[type="radio"]:not(:disabled):hover,
+.radio-item input[type="radio"]:not(:disabled):focus,
+.radio-item input[type="radio"]:not(:disabled):active {
+    box-shadow: var(--form-input-glow);
+    border-color: var(--brand);
+}

@@ -9,8 +9,15 @@ import {
     Icon,
     Input,
     Logo,
+    List,
+    Pill,
+    Radio,
+    Range,
+    Switch,
+    Text,
+    Textarea,
+    Tooltip,
 } from "@lib";
-import List from "./lib/components/list/list";
 
 export default () => {
     return (
@@ -54,6 +61,17 @@ export default () => {
                             <List.Item>{"Third Item"}</List.Item>
                         </List>
                         <Logo />
+                        <Pill>{"Pill"}</Pill>
+                        <Radio name="radio">
+                            <Radio.Item id="radio-1" label="Item 1" />
+                            <Radio.Item id="radio-2" label="Item 2" />
+                            <Radio.Item id="radio-3" label="Item 3" />
+                        </Radio>
+                        <Range id="range" />
+                        <Switch id="switch" label="Switch" />
+                        <Text as="h1">{"Heading 1"}</Text>
+                        <Textarea id="text-area" label="text area" />
+                        <Tooltip tip="tip">{"Tooltip"}</Tooltip>
                     </Grid>
                 </Container>
             </body>

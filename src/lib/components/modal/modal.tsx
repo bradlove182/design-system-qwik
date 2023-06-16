@@ -1,12 +1,14 @@
-import { PropFunction, Slot, component$ } from "@builder.io/qwik";
+import { type Signal, Slot, component$, useSignal } from "@builder.io/qwik";
 import style from "./index.module.css";
 
 export interface ModalProps {
     id: string;
-    ref?: PropFunction<(el: Element) => void>;
+    ref?: Signal<HTMLInputElement | undefined>;
 }
 
 const Modal = component$(({ id, ref }: ModalProps) => {
+    const modalRef = useSignal<HTMLInputElement | undefined>(undefined);
+    ref = modalRef;
     return (
         <div class={style.modal}>
             <label for={id} class={style["modal-close"]} />
@@ -14,7 +16,7 @@ const Modal = component$(({ id, ref }: ModalProps) => {
                 class={style.input}
                 type="checkbox"
                 hidden
-                ref={ref}
+                ref={modalRef}
                 id={id}
             />
             <div class={style["modal-box"]}>

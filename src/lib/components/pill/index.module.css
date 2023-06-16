@@ -1,0 +1,46 @@
+.pill {
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 28px;
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-3);
+    cursor: default;
+    user-select: none;
+    border-radius: var(--border-radius-3);
+    background: var(--pill-background);
+    color: var(--pill-color);
+    display: inline-flex;
+    padding: 5px 8px;
+    width: max-content;
+}
+
+.info {
+    --pill-background: var(--background-info);
+    --pill-color: var(--text-info);
+}
+
+.success {
+    --pill-background: var(--background-success);
+    --pill-color: var(--text-success);
+}
+
+.error {
+    --pill-background: var(--background-error);
+    --pill-color: var(--text-error);
+}
+
+.warning {
+    --pill-background: var(--background-warning);
+    --pill-color: var(--text-warning);
+}
+
+.brand {
+    --pill-background: var(--background-brand);
+    --pill-color: var(--brand);
+}
+
+.default {
+    --pill-background: var(--background-default);
+    --pill-color: var(--text);
+}
