@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { qwikVite } from "@builder.io/qwik/optimizer";
-import path from "path";
+import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig(() => {
     return {
@@ -13,18 +13,6 @@ export default defineConfig(() => {
                     `index.qwik.${format === "es" ? "mjs" : "cjs"}`,
             },
         },
-        resolve: {
-            alias: [
-                {
-                    find: "@lib",
-                    replacement: path.resolve(__dirname, "src/lib/index.ts"),
-                },
-                {
-                    find: "@utils",
-                    replacement: path.resolve(__dirname, "src/utils/index.ts"),
-                },
-            ],
-        },
-        plugins: [qwikVite()],
+        plugins: [qwikVite(), tsConfigPaths()],
     };
 });
