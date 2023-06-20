@@ -1,6 +1,6 @@
 :root {
     --brand: hsla(var(--indigo-25));
-    --brand-subdued: hsla(var(--indigo-25), 10%);
+    --brand-subdued: hsla(var(--indigo-25), 80%);
     --background: hsla(var(--gray-95));
     --background-100: hsla(var(--gray-90));
     --background-200: hsla(var(--gray-88));

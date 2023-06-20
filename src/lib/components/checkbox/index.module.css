@@ -2,12 +2,13 @@
     display: flex;
     align-items: center;
     background-color: var(--background-300);
-    padding-left: var(--spacing-3);
-    border-radius: var(--border-radius-4);
+    padding: 0 var(--spacing-3);
+    border-radius: var(--border-radius-3);
+    gap: var(--spacing-3);
 }
 
 .checkbox label {
-    padding: var(--spacing-3);
+    padding: var(--spacing-3) 0;
     width: 100%;
     transition: color 0.3s ease;
 }

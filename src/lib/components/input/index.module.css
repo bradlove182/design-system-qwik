@@ -9,11 +9,11 @@
     align-items: center;
     gap: var(--spacing-3);
     background-color: var(--form-input-background);
-    border: 1px solid var(--form-input-border);
+    border: 1px solid transparent;
     border-radius: var(--border-radius-3);
     padding: 0 var(--spacing-3);
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    line-height: 2.3334rem;
+    line-height: 1rem;
 }
 
 .input svg {
@@ -25,6 +25,8 @@
     background-color: transparent;
     outline: none;
     width: 100%;
+    padding: var(--spacing-3) 0;
+    text-align: right;
 }
 
 .input:has(input:disabled) {
@@ -52,7 +54,7 @@
     color: var(--brand);
 }
 
-.input input:disabled::placeholder{
+.input input:disabled::placeholder {
     color: var(--form-input-text-disabled);
 }
 
@@ -72,8 +74,16 @@
 .input:has(input:not(:disabled):hover),
 .input:has(input:not(:disabled):focus),
 .input:has(input:not(:disabled):active) {
-    box-shadow: var(--form-input-glow);
     border-color: var(--brand);
+}
+
+.input:has(input:not(:disabled)):hover label,
+.input:has(input:not(:disabled)):focus label,
+.input:has(input:not(:disabled)):active label,
+.input:has(input:not(:disabled):hover) label,
+.input:has(input:not(:disabled):focus) label,
+.input:has(input:not(:disabled):active) label {
+    color: var(--text-amplified);
 }
 
 .input:has(input:not(:disabled)):hover svg,
@@ -102,6 +112,7 @@
     position: relative;
     height: var(--icon-size-3);
     width: var(--icon-size-3);
+    min-width: var(--icon-size-3);
 }
 
 .email-icon svg {

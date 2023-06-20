@@ -40,37 +40,42 @@ export default () => {
                                 <Card.Body>
                                     <Grid gap={2}>
                                         <Input
+                                            label="Email"
                                             id="card-input-email"
                                             type="email"
-                                            placeholder="Email"
+                                            placeholder="email@address.co"
                                         />
                                         <Input
-                                            id="card-input-email"
+                                            label="Password"
+                                            id="card-input-password"
                                             type="password"
-                                            placeholder="Password"
+                                            placeholder="*****"
                                         />
                                         <Checkbox
                                             id="card-checkbox"
-                                            label="Bathe me in newsletters."
-                                        />
-                                        <Switch
-                                            id="card-switch"
                                             label="Bathe me in newsletters."
                                         />
                                     </Grid>
                                 </Card.Body>
                                 <Card.Footer>
                                     <Flex justifyContent="end">
-                                        <Button variant="gradient">
-                                            {"Sign In"}
-                                        </Button>
+                                        <Button expand>{"Sign In"}</Button>
                                     </Flex>
                                 </Card.Footer>
                             </Card>
                         </Container>
                         <Flex>
                             <Button variant={"gradient"}>{"Button"}</Button>
+                            <Button disabled>{"Button"}</Button>
                             <Button>{"Button"}</Button>
+                            <Button variant="outline">{"Button"}</Button>
+                            <Button variant="transparent">{"Button"}</Button>
+                            <Button icon>
+                                <Icon.Arrow />
+                            </Button>
+                            <Button icon disabled>
+                                <Icon.Arrow />
+                            </Button>
                         </Flex>
                         <Card>
                             <Card.Header>{"Header"}</Card.Header>
@@ -97,6 +102,12 @@ export default () => {
                         </Card>
                         <Code>{"Code"}</Code>
                         <Icon.Arrow />
+                        <Icon.Loading />
+                        <Textarea
+                            id="text-area"
+                            label="Text Area"
+                            placeholder="Placeholder"
+                        />
                         <Input
                             id="text"
                             label="Label"
@@ -137,7 +148,6 @@ export default () => {
                             </Card.Body>
                         </Card>
                         <Text as="h1">{"Heading 1"}</Text>
-                        <Textarea id="text-area" label="text area" />
                         <Tooltip tip="tip">{"Tooltip"}</Tooltip>
                     </Grid>
                 </Container>

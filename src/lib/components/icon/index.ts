@@ -6,6 +6,7 @@ import IconEye from "./eye";
 import IconAt from "./at";
 import IconTick from "./tick";
 import IconChevron from "./chevron";
+import IconLoading from "./loading";
 
 export interface IconProps {
     variant?:
@@ -29,6 +30,7 @@ const Icon = {
     At: IconAt,
     Tick: IconTick,
     Chevron: IconChevron,
+    Loading: IconLoading,
 } as const;
 
 export { Icon };

@@ -8,18 +8,21 @@ export interface ButtonBaseProps {
     disabled?: boolean;
     onClick?: PropFunction<() => void>;
     as?: "button" | "span";
+    expand?: boolean;
 }
 
 export interface ButtonOnlyIconProps extends ButtonBaseProps {
     icon: true;
     size?: "default" | "small";
     variant?: never;
+    expand?: never;
 }
 
 export interface ButtonNormalProps extends ButtonBaseProps {
     icon?: never;
     size?: never;
     variant?: "brand" | "transparent" | "outline" | "gradient";
+    expand?: boolean;
 }
 
 export type ButtonProps = ButtonOnlyIconProps | ButtonNormalProps;
@@ -32,6 +35,7 @@ const Button = component$(
         disabled = false,
         onClick,
         as = "button",
+        expand = false,
     }: ButtonProps) => {
         const Component = as;
         return (
@@ -41,6 +45,7 @@ const Button = component$(
                     style[variant],
                     icon ? style.icon : undefined,
                     icon ? style[`size-${size}`] : undefined,
+                    expand ? style.expand : undefined,
                 ]}
                 disabled={disabled}
                 type="button"

@@ -42,7 +42,6 @@ const Input = component$(
 
         return (
             <div class={style["input-wrapper"]}>
-                {label ? <Label id={id}>{label}</Label> : undefined}
                 <div class={style.input}>
                     {type === "email" ? (
                         <div class={style["email-icon"]}>
@@ -50,6 +49,18 @@ const Input = component$(
                             <Icon.Tick animate />
                         </div>
                     ) : undefined}
+                    {type === "password" ? (
+                        <button
+                            class={
+                                showPassword.value ? style["show-password"] : ""
+                            }
+                            onClick$={handleShowPasswordOnClick}
+                            disabled={disabled}
+                        >
+                            <Icon.Eye animate />
+                        </button>
+                    ) : undefined}
+                    {label ? <Label id={id}>{label}</Label> : undefined}
                     <input
                         id={id}
                         type={
@@ -63,17 +74,6 @@ const Input = component$(
                         disabled={disabled}
                         minLength={1}
                     />
-                    {type === "password" ? (
-                        <button
-                            class={
-                                showPassword.value ? style["show-password"] : ""
-                            }
-                            onClick$={handleShowPasswordOnClick}
-                            disabled={disabled}
-                        >
-                            <Icon.Eye animate />
-                        </button>
-                    ) : undefined}
                 </div>
             </div>
         );

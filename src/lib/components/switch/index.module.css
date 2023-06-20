@@ -3,7 +3,7 @@
     align-items: center;
     background-color: var(--background-300);
     padding-right: var(--spacing-3);
-    border-radius: var(--border-radius-4);
+    border-radius: var(--border-radius-3);
 }
 
 .switch label {

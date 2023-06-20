@@ -1,6 +1,8 @@
 .button {
+    background-color: var(--button-background, transparent);
+    color: var(--button-text, var(--text-amplified));
+    width: var(--button-width, max-content);
     height: 44px;
-    width: max-content;
     padding: 0 var(--spacing-3);
     border-radius: var(--border-radius-3);
     display: flex;
@@ -8,51 +10,13 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, color 0.3s ease,
+        background-color 0.3s ease, border-color 0.3s ease;
     outline: none;
-    color: var(--text-amplified);
-}
-
-.button:not(:disabled):not(.icon):hover,
-.button:not(:disabled):not(.icon):focus,
-.button:not(:disabled):not(.icon):active {
-    box-shadow: var(--box-shadow-glow);
-}
-
-.button:disabled {
-    background-color: var(--form-input-disabled);
-    color: var(--text-subdued);
-    cursor: not-allowed;
-}
-
-.button:disabled svg {
-    color: var(--text-subdued);
-}
-
-.button svg {
-    color: var(--text-brand);
-}
-
-.brand {
-    background-color: var(--brand-subdued);
-    color: var(--brand);
-    border-width: var(--border-1);
-    border-color: var(--border-color);
-}
-
-.transparent {
-    background-color: transparent;
-}
-
-.outline {
-    background-color: transparent;
-    border-width: var(--border-1);
-    border-color: var(--border-color);
 }
 
 .gradient {
-    background-color: var(--background);
-    color: var(--text-amplified);
+    --button-background: var(--background);
 }
 
 .gradient:after {
@@ -80,12 +44,48 @@
     left: -1px;
 }
 
+.gradient:not(:disabled):hover,
+.gradient:not(:disabled):focus,
+.gradient:not(:disabled):active {
+    box-shadow: var(--box-shadow-glow);
+}
+
+.brand {
+    --button-background: var(--brand);
+    --button-text: var(--text-amplified);
+}
+
+.brand:not(:disabled):hover,
+.brand:not(:disabled):focus,
+.brand:not(:disabled):active {
+    --button-background: var(--brand-subdued);
+}
+
+.outline {
+    border-width: var(--border-1);
+    border-color: var(--border-color);
+}
+
+.outline:not(:disabled):hover,
+.outline:not(:disabled):focus,
+.outline:not(:disabled):active,
+.transparent:not(:disabled):hover,
+.transparent:not(:disabled):focus,
+.transparent:not(:disabled):active {
+    --button-background: var(--background-200);
+}
+
+.expand {
+    width: 100%;
+}
+
 .icon {
     height: 44px;
     width: 44px;
     padding: 0;
     background-color: transparent;
     border-width: 0;
+    border-radius: 100px;
 }
 
 .icon svg {
@@ -107,13 +107,11 @@
     --border-hover-color: var(--brand);
     --border-thickness: 2px;
     --color: var(--brand);
-    --corner: calc(var(--border-radius-3) + 2px);
     --button-background-scale: 0.92;
-    box-shadow: var(--box-shadow-glow);
 }
 
 .icon.brand:not(:disabled):after {
-    background-color: var(--foreground);
+    background-color: var(--background-300);
 }
 
 .size-small {
@@ -133,7 +131,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: var(--corner, var(--border-radius-3));
+    border-radius: 100%;
     transition: box-shadow 0.3s ease 0s, border-color 0.2s ease 0s,
         background 0.3s ease 0s,
         transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 0s;
@@ -142,6 +140,20 @@
         var(--border-hover-color, transparent);
     box-shadow: var(--shadow, none);
     z-index: 0;
+}
+
+.button:disabled {
+    background-color: var(--form-input-disabled);
+    color: var(--text-subdued);
+    cursor: not-allowed;
+}
+
+.button:disabled svg {
+    color: var(--text-subdued);
+}
+
+.button svg {
+    color: var(--text-brand);
 }
 
 @keyframes pulsing-gradient {

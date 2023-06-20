@@ -2,29 +2,27 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-2);
+    background-color: var(--form-input-background);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius-3);
+    padding: var(--spacing-3);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    line-height: 1.445rem;
 }
 
 .text-area textarea {
-    background-color: var(--form-input-background);
-    border: 1px solid var(--form-input-border);
-    border-radius: var(--border-radius-3);
-    padding: var(--spacing-2) var(--spacing-3);
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
-    line-height: 1.445rem;
+    background-color: transparent;
     outline: none;
     appearance: none;
     resize: none;
 }
 
-.text-area textarea:disabled {
+.text-area:has(textarea:disabled),
+textarea:disabled {
     background-color: var(--form-input-disabled);
     border-color: var(--form-input-disabled);
     color: var(--form-input-text-disabled);
     cursor: not-allowed;
-}
-
-.text-area textarea:disabled::placeholder{
-    color: var(--form-input-text-disabled);
 }
 
 .text-area textarea::placeholder {
@@ -32,14 +30,17 @@
     opacity: 0.5;
 }
 
-.text-area textarea:not(:disabled):hover,
-.text-area textarea:not(:disabled):focus,
-.text-area textarea:not(:disabled):active {
-    box-shadow: var(--form-input-glow);
+.text-area:has(textarea:not(:disabled)):hover,
+.text-area:has(textarea:not(:disabled)):focus,
+.text-area:has(textarea:not(:disabled)):active {
     border-color: var(--brand);
 }
 
 .text-area textarea:-webkit-autofill {
     -webkit-text-fill-color: var(--text);
     -webkit-box-shadow: 0 0 0px 40rem var(--form-input-background) inset;
+}
+
+.text-area textarea:disabled::placeholder {
+    color: var(--form-input-text-disabled);
 }

@@ -23,6 +23,7 @@ const Checkbox = component$(
     ({ id, label, checked, onChange, disabled }: CheckboxProps) => {
         return (
             <div class={style.checkbox}>
+                {label ? <Label id={id}>{label}</Label> : undefined}
                 <input
                     id={id}
                     type="checkbox"
@@ -30,7 +31,6 @@ const Checkbox = component$(
                     checked={checked}
                     disabled={disabled}
                 />
-                {label ? <Label id={id}>{label}</Label> : undefined}
             </div>
         );
     }
