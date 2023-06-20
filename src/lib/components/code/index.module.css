@@ -1,9 +1,7 @@
 .code {
-    background-color: var(--foreground);
-    border-color: var(--border-color);
-    border-width: 1px;
-    padding: var(--spacing-3);
-    border-radius: var(--border-radius-3);
+    background-color: var(--background-100);
+    padding: var(--spacing-5);
+    border-radius: var(--border-radius-4);
     font-family: var(--font-mono);
     color: var(--text-subdued);
     display: block;

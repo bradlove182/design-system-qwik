@@ -19,6 +19,7 @@ const Switch = component$(
     ({ id, label, checked, onChange, disabled = false }: SwitchProps) => {
         return (
             <div class={style.switch}>
+                {label ? <Label id={id}>{label}</Label> : undefined}
                 <input
                     type="checkbox"
                     id={id}
@@ -26,7 +27,6 @@ const Switch = component$(
                     checked={checked}
                     disabled={disabled}
                 />
-                {label ? <Label id={id}>{label}</Label> : undefined}
             </div>
         );
     }

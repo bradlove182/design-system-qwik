@@ -78,7 +78,10 @@
     --border-3: 3px;
     --border-4: 4px;
 
-    --form-input-background: hsla(var(--gray-88));
+    --form-input-background: hsla(var(--gray-85));
+    --form-input-background-hover: hsla(var(--gray-80));
+    --form-checkbox-background: hsla(var(--gray-80));
+    --form-checkbox-background-hover: hsla(var(--gray-75));
     --form-input-disabled: hsla(var(--gray-80));
     --form-input-text-disabled: hsla(var(--gray-30));
     --form-input-glow: 0 2px 10px -2px hsla(var(--indigo-35), 1);

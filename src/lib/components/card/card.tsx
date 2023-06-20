@@ -9,6 +9,7 @@ export interface CardProps {
 export interface CardComponent<T extends {}> extends Component<T> {
     Header: typeof CardHeader;
     Body: typeof CardBody;
+    Footer: typeof CardFooter;
 }
 
 const CardHeader = component$(() => (
@@ -19,6 +20,12 @@ const CardHeader = component$(() => (
 
 const CardBody = component$(() => (
     <div class={style.body}>
+        <Slot />
+    </div>
+));
+
+const CardFooter = component$(() => (
+    <div class={style.footer}>
         <Slot />
     </div>
 ));
@@ -34,4 +41,5 @@ const Card = component$(({ elevation = 0 }: CardProps) => {
 export default Object.assign(Card, {
     Header: CardHeader,
     Body: CardBody,
+    Footer: CardFooter,
 }) as CardComponent<CardProps>;

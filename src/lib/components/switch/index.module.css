@@ -1,13 +1,24 @@
 .switch {
     display: flex;
     align-items: center;
-    gap: var(--spacing-2);
+    background-color: var(--background-300);
+    padding-right: var(--spacing-3);
+    border-radius: var(--border-radius-4);
+}
+
+.switch label {
+    padding: var(--spacing-3);
+    width: 100%;
+    transition: color 0.3s ease;
 }
 
 .switch input[type="checkbox"] {
-    width: 44px;
+    --width: 44px;
+    width: var(--width);
+    min-width: var(--width);
+    max-width: var(--width);
     height: 24px;
-    background-color: var(--form-input-background);
+    background-color: var(--form-checkbox-background);
     border: 1px solid var(--switch-border-color, var(--form-input-border));
     border-radius: var(--border-radius-4);
     appearance: none;
@@ -63,6 +74,14 @@
 .switch input[type="checkbox"]:not(:disabled):hover,
 .switch input[type="checkbox"]:not(:disabled):focus,
 .switch input[type="checkbox"]:not(:disabled):active {
-    box-shadow: var(--form-input-glow);
     border-color: var(--brand);
+}
+
+.switch:hover label:not(:disabled),
+.switch:focus label:not(:disabled),
+.switch:active label:not(:disabled),
+.switch:has(*:hover) label:not(:disabled),
+.switch:has(*:focus) label:not(:disabled),
+.switch:has(*:active) label:not(:disabled) {
+    color: var(--text-amplified);
 }
