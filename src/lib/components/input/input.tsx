@@ -43,6 +43,20 @@ const Input = component$(
         return (
             <div class={style["input-wrapper"]}>
                 <div class={style.input}>
+                    {label ? <Label id={id}>{label}</Label> : undefined}
+                    <input
+                        id={id}
+                        type={
+                            type === "password" && showPassword.value
+                                ? "text"
+                                : type
+                        }
+                        onChange$={onChange}
+                        value={value}
+                        placeholder={placeholder}
+                        disabled={disabled}
+                        minLength={1}
+                    />
                     {type === "email" ? (
                         <div class={style["email-icon"]}>
                             <Icon.At animate />
@@ -60,20 +74,6 @@ const Input = component$(
                             <Icon.Eye animate />
                         </button>
                     ) : undefined}
-                    {label ? <Label id={id}>{label}</Label> : undefined}
-                    <input
-                        id={id}
-                        type={
-                            type === "password" && showPassword.value
-                                ? "text"
-                                : type
-                        }
-                        onChange$={onChange}
-                        value={value}
-                        placeholder={placeholder}
-                        disabled={disabled}
-                        minLength={1}
-                    />
                 </div>
             </div>
         );
