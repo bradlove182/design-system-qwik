@@ -1,13 +1,24 @@
 .radio-group {
     display: flex;
     flex-direction: var(--radio-direction, column);
-    gap: var(--spacing-2);
+    background-color: var(--background-300);
+    border-radius: var(--border-radius-3);
 }
 
 .radio-item {
     display: flex;
     gap: var(--spacing-2);
     align-items: center;
+    padding: 0 var(--spacing-3);
+}
+
+.radio-item:not(:last-of-type) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.radio-item label {
+    padding: var(--spacing-3) 0;
+    width: 100%;
 }
 
 .radio-item input[type="radio"] {
@@ -16,7 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--radio-background, var(--form-input-background));
+    background-color: var(--radio-background, var(--form-checkbox-background));
     border: 1px solid var(--radio-border, var(--form-input-border));
     border-radius: var(--spacing-4);
     appearance: none;
@@ -34,7 +45,7 @@
     transform: scale(var(--dot-scale, 2));
     transition: transform var(--duration-transform, 0.2s)
         var(--duration-transform-ease, ease);
-    background-color: var(--form-input-background);
+    background-color: var(--form-checkbox-background);
     border-radius: var(--spacing-4);
 }
 
@@ -67,6 +78,11 @@
 .radio-item input[type="radio"]:not(:disabled):hover,
 .radio-item input[type="radio"]:not(:disabled):focus,
 .radio-item input[type="radio"]:not(:disabled):active {
-    box-shadow: var(--form-input-glow);
     border-color: var(--brand);
+}
+
+.radio-item:not(:disabled):hover label,
+.radio-item:not(:disabled):focus label,
+.radio-item:not(:disabled):active label {
+    color: var(--text-amplified);
 }
