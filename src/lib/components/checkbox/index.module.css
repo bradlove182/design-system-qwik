@@ -20,7 +20,7 @@
     max-width: var(--spacing-4);
     min-width: var(--spacing-4);
     background-color: var(--form-checkbox-background);
-    border: 1px solid transparent;
+    border: 1px solid var(--form-input-border);
     border-radius: var(--border-radius-3);
     position: relative;
     transition: background-color 0.3s ease 0s, border-color 0.3s ease 0s,
