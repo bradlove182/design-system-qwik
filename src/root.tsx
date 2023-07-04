@@ -27,7 +27,7 @@ export default () => {
                 <title>Design System</title>
             </head>
             <body>
-                <Container>
+                <Container size={2}>
                     <Grid gap={6}>
                         <Container size={1}>
                             <Card>
