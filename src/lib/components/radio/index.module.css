@@ -10,10 +10,12 @@
     gap: var(--spacing-2);
     align-items: center;
     padding: 0 var(--spacing-3);
+    width: 100%;
 }
 
 .radio-item:not(:last-of-type) {
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
+    border-width: 0 0 1px 0;
 }
 
 .radio-item label {
@@ -24,6 +26,10 @@
 .radio-item input[type="radio"] {
     height: var(--spacing-4);
     width: var(--spacing-4);
+    min-width: var(--spacing-4);
+    max-width: var(--spacing-4);
+    min-height: var(--spacing-4);
+    max-height: var(--spacing-4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,4 +91,8 @@
 .radio-item:not(:disabled):focus label,
 .radio-item:not(:disabled):active label {
     color: var(--text-amplified);
+}
+
+.direction-row .radio-item:not(:last-of-type) {
+    border-width: 0 1px 0 0;
 }

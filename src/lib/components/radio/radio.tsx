@@ -22,7 +22,7 @@ const Radio = component$(({ name, direction = "column" }: RadioProps) => {
     return (
         <div
             role="radiogroup"
-            class={style["radio-group"]}
+            class={[style["radio-group"], style[`direction-${direction}`]]}
             style={{
                 "--radio-direction": direction,
             }}

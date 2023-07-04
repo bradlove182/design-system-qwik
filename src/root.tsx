@@ -136,6 +136,11 @@ export default () => {
                             <Radio.Item id="radio-2" label="Item 2" />
                             <Radio.Item id="radio-3" label="Item 3" />
                         </Radio>
+                        <Radio name="radio-2" direction="row">
+                            <Radio.Item id="radio-4" label="Item 1" />
+                            <Radio.Item id="radio-5" label="Item 2" />
+                            <Radio.Item id="radio-6" label="Item 3" />
+                        </Radio>
                         <Range id="range" />
                         <Switch id="switch" label="Switch" />
                         <Card>
